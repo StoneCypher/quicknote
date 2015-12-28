@@ -30,9 +30,9 @@ function list_tags()       { return list_keys().filter(k => k.substring(0,4) ===
 
 function sl(ts)            { return make_note_link(ts); }
 function slia(t)           { return atag === t? '<div class="slia">'+(get_tag(t).map(ts => sl(ts)).join('')+'</div>') : ''; }
-function make_note_link(t) { return `<a href="#" onclick="anote = (anote === ${t})? '' : ${t}; byId('editor').value = '${get_note(t)}'; redraw();">${get_note(t)}</a>`; }
+function make_note_link(t) { return `<div class="item"><a href="#" onclick="anote = (anote === ${t})? '' : ${t}; byId('editor').value = '${get_note(t)}'; redraw();">${get_note(t)}</a></div>`; }
 function make_notelist()   { return list_notes().map(t => make_note_link(t)).join(''); }
-function make_tag_link(t)  { return `<a href="#" onclick="atag = (atag === '${t}')? '' : '${t}'; redraw();">${t}</a>${slia(t)}`; }
+function make_tag_link(t)  { return `<div class="item"><a href="#" onclick="atag = (atag === '${t}')? '' : '${t}'; redraw();">${t}</a></div>${slia(t)}`; }
 function make_taglist()    { return list_tags().map(t => make_tag_link(t)).join(''); }
 
 

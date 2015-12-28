@@ -1,21 +1,26 @@
 
-html, body        { margin: 0; padding: 0; border: 0; height: 100%; }
-#core             { width: 100%; height: 100%; border-collapse: separate; border-spacing: 1em; background-color: #348; }
-td                { background-color: white; position: relative; background-color: #ddd; vertical-align: top; }
+html, body         { margin: 0; padding: 0; border: 0; height: 100%; }
+#core              { width: 100%; height: 100%; border-collapse: separate; border-spacing: 1em; background-color: #348; }
+td                 { background-color: white; position: relative; background-color: #ddd; vertical-align: top; }
 
-#notelist         { width: 200px; max-width: 200px; }
-#notelist_div     { overflow: auto; height: 100%; }
-#notelist a       { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: #008; text-decoration: none; display: block; margin: 0.25em; background-color: white; border-radius: 5px; }
-#notelist a:hover { color: #00f; text-decoration: underline; background-color: #def; }
+#notelist,
+#taglist           { width: 250px; max-width: 250px; }
 
-#taglist          { width: 200px; max-width: 200px; }
-#taglist_div      { overflow: auto; height: 100%; }
-#taglist a        { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: #008; text-decoration: none; display: block; margin: 0.25em; background-color: white; border-radius: 5px; }
-#taglist a:hover  { color: #00f; text-decoration: underline; background-color: #def; }
+#notelist_div,
+#taglist_div       { overflow: auto; height: 100%; }
 
-#tabound          { position: absolute; width: 100%; top: 0; bottom: 3em; background-color: white; overflow: hidden; }
-#editor           { width: 99%; height: 100%; border: 0; overflow: auto; outline: none; }
-#widgets          { position: absolute; width: 100%; bottom: 0; height: 2em; text-align: right; }
-#widgets input    { margin-right: 1em; }
+#notelist a,
+#taglist a         { color: #008; text-decoration: none; }
 
-#taglist .slia a  { margin-left: 1em; }
+#notelist .item,
+#taglist .item     { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: block; margin: 0.25em; background-color: white; border-radius: 5px; }
+
+#notelist a:hover,
+#taglist a:hover   { color: #00f; text-decoration: underline; background-color: #def; }
+
+#tabound           { position: absolute; width: 100%; top: 0; bottom: 3em; background-color: white; overflow: hidden; }
+#editor            { width: 99%; height: 100%; border: 0; overflow: auto; outline: none; }
+#widgets           { position: absolute; width: 100%; bottom: 0; height: 2em; text-align: right; }
+#widgets input     { margin-right: 1em; }
+
+#taglist .slia div { margin-left: 1em; }
