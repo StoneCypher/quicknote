@@ -4,16 +4,19 @@ html, body           { margin: 0; padding: 0; border: 0; height: 100%; }
 td                   { background-color: white; position: relative; vertical-align: top; border: 0; padding: 0; margin: 0; }
 
 #notelist,
-#taglist             { width: 250px; max-width: 250px; }
+#taglist             { width: 250px; max-width: 250px; height: 50%; }
 
-#notelist_div,
-#taglist_div         { overflow: auto; height: 100%; }
+#notelist_div        { overflow: auto; height: 100%; }
+#taglist_table,
+#taglist_table tr,
+#taglist_table td    { overflow: auto; width: 100%; max-width: 100%; }
 
 a.note, a.tag        { color: black; text-decoration: none; }
 .note, .tag, .del    { cursor: pointer; }
+a.tag                { display: block; }
 
-#notelist .item,
-#taglist .item       { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: block; margin: 0.25em; background-color: white; border-radius: 5px; }
+.item                { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: block; margin-top: 0.2em; }
+#taglist .item       { margin-left: 0.4em; }
 
 #notelist .note:hover,
 #taglist .note:hover { color: #008; text-decoration: underline; background-color: #def; }
@@ -28,4 +31,4 @@ a.note, a.tag        { color: black; text-decoration: none; }
 
 #taglist .slia div   { margin-left: 1em; }
 
-.del                 { color: rgba(0,0,0, 0.4); }
+.del                 { color: rgba(0,0,0, 0.4); margin-left: 0.2em; }

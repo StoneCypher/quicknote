@@ -16,15 +16,15 @@ function list_keys()       { return seq(wls.length).map(i => wls.key(i)); }
 function note_name(ts)     { return 'note:' + ts.toString(); }
 function set_note(ts,t)    { return set_key(note_name(ts), t); }
 function get_note(ts)      { return get_key(note_name(ts)); }
-function add_note(t)       { var ts = Date.now().toString(); set_note(ts, t); return ts; }
-function del_note(t)       { window.alert(`todo: del ${t}`); }
+function add_note(t)       { var ts = Date.now(); set_note(ts, t); return ts; }
+function del_note(t)       { tags_from(get_note(t)).map(n => del_tag(n,t)); wls.removeItem(note_name(t)); redraw(); }
 function list_notes()      { return list_keys().filter(k => k.substring(0,5) === "note:").map(k => parseInt(k.substring(5), 10)) }
 
 function tag_name(ts)      { return 'tag:' + ts.toString(); }
 function get_tag(tag)      { return get_key(tag_name(tag)) || []; }
 function set_tag(tag,a)    { return set_key(tag_name(tag), a); }
 function add_tag(tag,n)    { set_tag(tag, get_tag(tag).concat([n])); }
-function del_tag(tag,n)    { window.alert(`todo: del tag ${tag} from ${n}`); }
+function del_tag(tag,n)    { var newtags = get_tag(tag).filter(t => t != n); newtags.length? set_tag(tag, newtags) : wls.removeItem(tag_name(tag)); }
 function list_tags()       { return list_keys().filter(k => k.substring(0,4) === "tag:").map(k => k.substring(4)); }
 
 
